@@ -1,14 +1,17 @@
 ########## Things to do ##########
 # 1. Create Gui...................... Done
 # 2. Create Logging system........... Done
-# 4. Implement actual system
+# 4. Implement actual system......... WIP
+# 5. Implement threading.............
 
 # Ideas
 # Download wordlist as a PDF
 # Have program read the  PDF
 # manipulate the mouse and keyboard
+# 
+# Edit: PDF system doesnt work as expected, use txt file instead
 
-# as soon as starting, set screen to full using f11
+# as soon as starting, set screen to full using f11 in browser
 # base all cords on this.
 
 warn_tag = "[\u001b[31mWARN\u001b[0m] "
@@ -51,8 +54,7 @@ def Log(tag, text):
         log.write(text + "\n")
     else:
         log.write("[" + str(datetime.datetime.now()) + "] " + log_tag + " " + text + "\n")
-
-
+        
 try:
     import ctypes
     import os
@@ -234,7 +236,7 @@ def exit_command():  # kills threads and processes
     exit()
 
 
-# ------------------- Setup and window shit-------------------- #
+# ------------------- Setup and window stuff-------------------- #
 Log(info_tag, "Creating Window[200x300]")
 root = Tk()
 root.title("Education Perfect Automator")
